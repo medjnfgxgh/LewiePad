@@ -42,7 +42,7 @@ KC_paste = KC.MACRO(
 )
 
 # pins
-encoder_handler.pins = board.D5, board.D6, board.D4
+encoder_handler.pins = (board.D5, board.D6, board.D4)
 keyboard.col_pins = (board.D10, board.D9, board.D8, board.D7)
 keyboard.row_pins = (board.D0, board.D1, board.D2, board.D3)
 keyboard.diode_orientation = DiodeOrientation.COL2ROW
