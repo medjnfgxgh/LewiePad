@@ -8,25 +8,28 @@ from kmk.extensions.RGB import RGB, AnimationModes
 from kmk.modules.encoder import EncoderHandler
 from kmk.extensions.media_keys import MediaKeys
 from kmk.modules.holdtap import HoldTap
-
+from kmk.modules.layers import Layers
 
 # setup
 keyboard = KMKKeyboard()
 
+layers = Layers()
+keyboard.modules.append(Layers())
+
 macros = Macros()
 keyboard.modules.append(macros)
-
-encoder_handler = EncoderHandler()
-keyboard.modules = [layers, holdTap, encoder_handler]
 
 keyboard.extensions.append(MediaKeys())
 
 rgb = RGB(pixel_pin=board.D7, num_pixels=2)
 keyboard.extensions.append(rgb)
-rgb.set_rgb_fill(255, 255, 255)
+#rgb.set_rgb_fill(255, 255, 255)
 
 holdtap = HoldTap()
 keyboard.modules.append(holdtap)
+
+encoder_handler = EncoderHandler()
+keyboard.modules.append(encoder_handler)
 
 # macros
 KC_copy = KC.MACRO(
@@ -37,14 +40,14 @@ KC_copy = KC.MACRO(
 
 KC_paste = KC.MACRO(
     Press(KC.LCTL),
-    Tap(KC.C),
+    Tap(KC.V),
     Release(KC.LCTL)
 )
 
 # pins
-encoder_handler.pins = (board.D5, board.D6, board.D4)
-keyboard.col_pins = (board.D10, board.D9, board.D8, board.D7)
-keyboard.row_pins = (board.D0, board.D1, board.D2, board.D3)
+encoder_handler.pins = ((board.D5, board.D6, board.D4),)
+keyboard.col_pins = (board.D10, board.D9, board.D8)
+keyboard.row_pins = (board.D2, board.D1, board.D0, board.D3)
 keyboard.diode_orientation = DiodeOrientation.COL2ROW
 
 
@@ -56,7 +59,7 @@ keyboard.keymap = [
      KC_copy, KC.KP_0, KC_paste]
 ]
 encoder_handler.map = [
-    ((KC.VOLD, KC.VOLU, KC.NO))
+    [(KC.DELETE, KC.BSPACE, KC.NO)]
 ]
 
 # Start
