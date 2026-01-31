@@ -451,7 +451,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "funboard_PCB.kicad_pro",
+    "filename": "PCB.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -487,10 +487,10 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "production/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "PCB.stl",
       "svg": "",
       "vrml": ""
     },
