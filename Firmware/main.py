@@ -31,6 +31,8 @@ keyboard.modules.append(holdtap)
 encoder_handler = EncoderHandler()
 keyboard.modules.append(encoder_handler)
 
+xxxx = KC.NO
+
 # macros
 KC_copy = KC.MACRO(
     Press(KC.LCTL),
@@ -47,19 +49,26 @@ KC_paste = KC.MACRO(
 # pins
 encoder_handler.pins = ((board.D5, board.D6, board.D4),)
 keyboard.col_pins = (board.D10, board.D9, board.D8)
-keyboard.row_pins = (board.D2, board.D1, board.D0, board.D3)
+keyboard.row_pins = (board.D0, board.D1,board.D2 , board.D3)
 keyboard.diode_orientation = DiodeOrientation.COL2ROW
 
 
 # map
 keyboard.keymap = [
-    [KC.KP_1, KC.KP_2, KC.KP_3, 
+    #number layer
+    [KC.KP_7, KC.KP_8, KC.KP_9, 
      KC.KP_4, KC.KP_5, KC.KP_6, 
-     KC.KP_7, KC.KP_8, KC.KP_9, 
-     KC_copy, KC.KP_0, KC_paste]
+     KC.KP_1, KC.KP_2, KC.KP_3, 
+     KC_copy, KC.KP_0, KC_paste], 
+    #gaming layer
+    [KC.Q, KC.W, KC.E, 
+     KC.A, KC.S, KC.D, 
+     KC.TAB, KC.Z, KC.X,
+     KC.LSHIFT, KC.LCTRL, KC.SPACE]
 ]
 encoder_handler.map = [
-    [(KC.DELETE, KC.BSPACE, KC.NO)]
+    [(KC.DELETE, KC.BSPACE, KC.DF(1))],
+    [(KC.VOLU, KC.VOLD, KC.DF(0))]
 ]
 
 # Start
