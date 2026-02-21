@@ -15,6 +15,9 @@ Cad:
 
 <img width="1121" height="715" alt="image" src="https://github.com/user-attachments/assets/ee5a302a-9311-4bd9-a698-8e79590fa9ea" />
 
+Finished macropad:
+
+![20260208_180943](https://github.com/user-attachments/assets/10bbb772-dd8b-4772-b8ef-c6cf284a7de4)
 
 
 BOM:
